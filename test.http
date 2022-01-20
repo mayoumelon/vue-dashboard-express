@@ -15,3 +15,7 @@ Content-Type: application/json
   "email": "test1@test.com",
   "password": "password123"
 }
+
+###
+GET http://localhost:5000/api/users/user HTTP/1.1
+Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTg4ZWEyZjM1MTM3YTNkMDc3MTllYSIsIm5hbWUiOiJzYW1wbGUxIiwiZW1haWwiOiJ0ZXN0MUB0ZXN0LmNvbSIsImlhdCI6MTY0MjcxMjg0NSwiZXhwIjoxNjQyNzk5MjQ1fQ.iZDTUh2gsEC5PIo_23oJWkdYeFey-H1lJ8a560Fh2ew

@@ -41,4 +41,10 @@ const loginUser = async (req, res) => {
   });
 };
 
-module.exports = { registerUser, loginUser };
+const getUser = async (req, res) => {
+  const user = await User.findOne({ email: req.user.email });
+  if (!user) return res.status(404).json('ユーザーは存在しません');
+  res.status(200).json(user);
+};
+
+module.exports = { registerUser, loginUser, getUser };
