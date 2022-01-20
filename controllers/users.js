@@ -18,4 +18,16 @@ const registerUser = async (req, res) => {
   }
 };
 
-module.exports = { registerUser };
+const loginUser = async (req, res) => {
+  const user = await User.findOne({ email: req.body.email });
+  if (!user) return res.status(401).json("メールアドレスに誤りがあります");
+  const match = await bcrypt.compare(req.body.password, user.password);
+  if (!match) return res.status(401).json("パスワードに誤りがあります。");
+  res.status(200).json({
+    id: user._id,
+    name: user.name,
+    email: user.email,
+  });
+}
+
+module.exports = { registerUser, loginUser };
