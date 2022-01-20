@@ -1,12 +1,15 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const cors = require('cors');
 
 const userRoute = require("./routes/user");
 
 dotenv.config();
 
 const app = express();
+
+app.use(cors());
 
 const dbConnect = async () => {
   try {
